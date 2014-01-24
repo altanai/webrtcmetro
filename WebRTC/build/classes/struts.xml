@@ -1,0 +1,61 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.action.excludePattern" value="/controller*"></constant> 
+	<package name="default" extends="hibernate-default">
+	   			 <!-- validation -->
+	    <action name="register" method="validate" class="com.javatpoint.RegisterAction" >
+			<result name="success">/welcome.jsp</result>
+			<result name="input">/testvalidation.jsp</result>
+		</action>
+
+	           <!-- user action -->
+		<action name="saveOrUpdateUser" method="saveOrUpdate" class="com.tutorials4u.web.UserAction">
+			<result name="success" type="redirect">listUser</result>
+		</action>
+		<action name="listUser" method="list" class="com.tutorials4u.web.UserAction">
+			<result name="success">/register.jsp</result>
+		</action>
+		<action name="editUser" method="edit" class="com.tutorials4u.web.UserAction">
+			<result name="success">/register.jsp</result>
+		</action>
+		<action name="deleteUser" method="delete" class="com.tutorials4u.web.UserAction">
+			<result name="success" type="redirect">listUser</result>
+		</action>
+		
+				<!-- login action -->
+		<action name="showlogin" method="list" class="com.tutorials4u.web.LoginAction">
+			<result name="success">/login.jsp</result>
+		</action>
+		
+		<action name="loginUser" method="validate" class="com.tutorials4u.web.LoginAction">
+			<result name="success">/home.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		
+		          <!-- email action -->
+		<action name="saveOrUpdateEmail" method="saveOrUpdate" class="com.tutorials4u.web.EmailAction">
+			<result name="success" type="redirect">listEmail</result>
+		</action>
+		<action name="listEmail" method="list" class="com.tutorials4u.web.EmailAction">
+			<result name="success">/email.jsp</result>
+		</action>
+		<action name="editEmail" method="edit" class="com.tutorials4u.web.EmailAction">
+			<result name="success">/email.jsp</result>
+		</action>
+		<action name="deleteEmail" method="delete" class="com.tutorials4u.web.EmailAction">
+			<result name="success" type="redirect">listEmail</result>
+		</action>
+		
+		          <!-- friend action -->
+		<action name="addFriend" method="add" class="com.tutorials4u.web.FriendAction">
+			<result name="success" type="redirect">listFriend</result>
+		</action>
+		<action name="listFriend" method="list" class="com.tutorials4u.web.FriendAction">
+			<result name="success">/friend.jsp</result>
+		</action>
+		
+	</package>
+</struts>

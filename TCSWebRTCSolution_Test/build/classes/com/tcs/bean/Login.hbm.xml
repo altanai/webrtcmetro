@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Jan, 2014 4:05:21 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.tcs.bean.Login" table="LOGIN">
+        <id name="publicIdentity" type="java.lang.String">
+            <column name="PUBLICIDENTITY" />
+            <generator class="assigned" />
+        </id>
+        <list name="privateIdentityFrd" inverse="false" table="LOGIN" lazy="true">
+            <key>
+                <column name="PUBLICIDENTITY" />
+            </key>
+            <list-index></list-index>
+            <element type="java.lang.String">
+                <column name="PRIVATEIDENTITYFRD" />
+            </element>
+        </list>
+        <list name="privateIdentityNotFrd" inverse="false" table="LOGIN" lazy="true">
+            <key>
+                <column name="PUBLICIDENTITY" />
+            </key>
+            <list-index></list-index>
+            <element type="java.lang.String">
+                <column name="PRIVATEIDENTITYNOTFRD" />
+            </element>
+        </list>
+        
+        <property name="displayName" type="java.lang.String">
+            <column name="DISPLAYNAME" />
+        </property>
+        
+        <property name="privateIdentity" type="java.lang.String">
+            <column name="PRIVATEIDENTITY" />
+        </property>
+        
+        <property name="realm" type="java.lang.String">
+            <column name="REALM" />
+        </property>
+        
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        
+        <property name="secretQuestion" type="java.lang.String">
+            <column name="SECRETQUESTION" />
+        </property>
+        <property name="answer" type="java.lang.String">
+            <column name="ANSWER" />
+        </property>
+        <property name="picfile" type="java.lang.String">
+            <column name="PICFILE" />
+        </property>
+        <primitive-array name="profilepic" table="LOGIN">
+            <key>
+                <column name="PUBLICIDENTITY" />
+            </key>
+            <index></index>
+            <element type="byte">
+                <column name="PROFILEPIC" />
+            </element>
+        </primitive-array>
+        <list name="presenceStatus" inverse="false" table="LOGIN" lazy="true">
+            <key>
+                <column name="PUBLICIDENTITY" />
+            </key>
+            <list-index></list-index>
+            <element type="java.lang.String">
+                <column name="PRESENCESTATUS" />
+            </element>
+        </list>
+    </class>
+</hibernate-mapping>

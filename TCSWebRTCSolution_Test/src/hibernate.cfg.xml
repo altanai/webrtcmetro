@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="metroUIdb">
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">mysql</property>
+  <property name="hibernate.connection.url">jdbc:mysql://14.98.233.184:3306/webrtc</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="hibernate.show_sql">true</property>
+  <mapping class="com.tcs.bean.Login" package="com.tcs.hibernate" resource="com/tcs/bean/Login.hbm.xml"/>
+  <!--       	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rough</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="connection.password"></property>
+	    <property name="connection.pool_size">1</property> 
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">create</property>
+		
+	<mapping class="com.tcs.bean.ActiveUsers" />
+		<mapping class="com.tcs.bean.AnalyticBean" />
+		<mapping class="com.tcs.bean.CallLogs" />
+		<mapping class="com.tcs.bean.ConferenceDetails" />
+		<mapping class="com.tcs.bean.facebookbean" />
+		<mapping class="com.tcs.bean.Login" />
+		<mapping class="com.tcs.bean.Notification" />
+		<mapping class="com.tcs.bean.openLinkBean" />
+		<mapping class="com.tcs.bean.QuestionBean" />
+		<mapping class="com.tcs.bean.userdetails" /> 
+		<mapping class="com.tcs.bean.geolocation" />-->
+ </session-factory>
+</hibernate-configuration>
